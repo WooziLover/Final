@@ -16,16 +16,14 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A))
-            rigidBody.transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+        if (Input.GetKey(KeyCode.A))
+            rigidBody.transform.Rotate(0, 20 * Time.deltaTime, 0);
         if (Input.GetKey(KeyCode.D))
-            rigidBody.transform.RotateAround(Vector3.zero, Vector3.down, 20 * Time.deltaTime);
+            rigidBody.transform.Rotate(0, -20 * Time.deltaTime, 0);
 
-        /*if (Input.GetKey(KeyCode.A))
-        {
-            transform.RotateAround(point, Vector3.up, 20 * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.D))
-            transform.RotateAround(point, -Vector3.up, 20 * Time.deltaTime);*/
+        /*if (Input.GetKey(KeyCode.W))
+            rigidBody.transform.Rotate(0, 0, 20 * Time.deltaTime);
+        if (Input.GetKey(KeyCode.S))
+            rigidBody.transform.Rotate(0, 0, -20 * Time.deltaTime);*/    
     }
 }
