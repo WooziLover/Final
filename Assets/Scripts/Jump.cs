@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+
+    public float mSpeed;
     Rigidbody rigidBody;
-    public float timer = 0.0f;
-    Vector3 j;
+
     // Start is called before the first frame update
     void Start()
     {
+        mSpeed = 5.0f;
         rigidBody = GetComponent<Rigidbody>();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-            timer += Time.deltaTime;
-            //rigidBody.AddForce(j);
+        if (rigidBody.detectCollisions)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                rigidBody.velocity = Vector3.up * mSpeed;
+            }
+            else
+            {
+                rigidBody.AddForce( ,ForceMode.Impulse);
+            }
+        }
     }
 }
