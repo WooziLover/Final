@@ -11,7 +11,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        mSpeed = 1.0f;
+        mSpeed = 3.0f;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            mSpeed = 1.0f;
+            mSpeed = 3.0f;
         }     
     }
 }

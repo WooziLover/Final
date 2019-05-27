@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-
-    public float mSpeed;
+    public float distanceToGround = 0.5f;
+    public float jumpHeight = 10f;
+    //public bool isGrounded;
     Rigidbody rigidBody;
 
     // Start is called before the first frame update
     void Start()
-    {
-        mSpeed = 5.0f;
-        rigidBody = GetComponent<Rigidbody>();
-        
-        
+    { 
+          rigidBody = GetComponent<Rigidbody>();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rigidBody.detectCollisions)
+        if(Input.GetKey(KeyCode.Space) && isGrounded())
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rigidBody.velocity = Vector3.up * mSpeed;
-            }
-            else
-            {
-                rigidBody.AddForce( ,ForceMode.Impulse);
-            }
+            Vector3 jump = new Vector3(0, jumpHeight, 0);
+            rigidBody.velocity += jump;
         }
+    }
+
+    bool isGrounded()
+    {
+
+        return Physics.Raycast(transform.position, Vector3.down, distanceToGround);
     }
 }
