@@ -4,7 +4,23 @@ using UnityEngine;
 
 public class PickAndHold : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform mDestination;
+
+    void OnMouseDown()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = false;
+        this.transform.position = mDestination.position;
+        this.transform.parent = GameObject.Find("Destination").transform;
+    }
+
+    void OnMouseUp()
+    {
+        this.transform.parent = null;
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<BoxCollider>().enabled = true;
+    }
+    /*   // Start is called before the first frame update
     void Start()
     {
         
@@ -14,5 +30,5 @@ public class PickAndHold : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }

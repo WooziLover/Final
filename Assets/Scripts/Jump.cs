@@ -24,6 +24,8 @@ public class Jump : MonoBehaviour
         {
             Vector3 jump = new Vector3(0, jumpHeight, 0);
             rigidBody.velocity += jump;
+            if (Input.GetKey(KeyCode.LeftShift))
+                rigidBody.velocity += jump;
         }
     }
 
