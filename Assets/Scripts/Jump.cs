@@ -6,7 +6,6 @@ public class Jump : MonoBehaviour
 {
     public float distanceToGround = 0.5f;
     public float jumpHeight = 10f;
-    //public bool isGrounded;
     Rigidbody rigidBody;
 
     // Start is called before the first frame update

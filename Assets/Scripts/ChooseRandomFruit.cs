@@ -6,21 +6,19 @@ public class ChooseRandomFruit : MonoBehaviour
 {
 
     GameObject[] itemChoices;
-    GameObject currentPoint;
-    int randomChoice;
+    Rigidbody rigidBody;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        itemChoices = GameObject.FindGameObjectsWithTag("point");
-        randomChoice = Random.Range(0, itemChoices.Length);
-        //next line holds the issue where there is a index out of bounds
-      //  currentPoint = itemChoices[randomChoice];
-//        print(currentPoint.name);
-    }
-
-    void Update()
-    {
+        pick();
         
     }
+
+    void pick()
+    {
+        int randomIndex = Random.Range(0, itemChoices.Length + 1);
+        GameObject spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
+    }         
 }
