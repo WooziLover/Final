@@ -7,7 +7,6 @@ public class SpawnAndLaunch : MonoBehaviour
     public GameObject[] itemChoices;
     int direction = 4;
     Rigidbody rigidBody;
-    GameObject spawn;
 
     // Start is called before the first frame update
     void Start()
@@ -20,30 +19,17 @@ public class SpawnAndLaunch : MonoBehaviour
     void Pick()
     {
         int randomIndex = Random.Range(0, itemChoices.Length);
-       spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
+       GameObject spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
     }
   
     void Launch()
     {
-        
-      /*  float randomDistance = Random.Range(0, GetComponent<Plane>().distance);
-        switch (direction)
+        if (Input.GetKey(KeyCode.L))
         {
-            case 0:
-                rigidBody.AddForce(Vector3.up);
-                break;
-
-            case 1:
-                rigidBody.AddForce(Vector3.left);
-                break;
-
-            case 2:
-                rigidBody.AddForce(Vector3.right);
-                break;
-
-            case 3:
-                rigidBody.AddForce(Vector3.down);
-                break;
-        }*/
+            int x = Random.Range(-360, 360);
+            int y = Random.Range(-360, 360);
+            Vector3 newForce = new Vector3(x, 0, y);
+            rigidBody.AddForce(newForce);// newForce * 5
+        }
     }
 }

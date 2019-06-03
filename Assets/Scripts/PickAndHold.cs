@@ -5,6 +5,9 @@ using UnityEngine;
 public class PickAndHold : MonoBehaviour
 {
     public Transform mDestination;
+    Rigidbody rigidBody;
+
+    //You have to use the Translate Function so it goes to the camera. 
 
     void OnMouseDown()
     {
@@ -20,15 +23,14 @@ public class PickAndHold : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<BoxCollider>().enabled = true;
     }
-    /*   // Start is called before the first frame update
+     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidBody = GetComponent<Rigidbody>();  
     }
-
+    
     // Update is called once per frame
     void Update()
-    {
-        
-    }*/
+    {   
+    }
 }
