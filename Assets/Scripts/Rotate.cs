@@ -19,9 +19,9 @@ public class Rotate : MonoBehaviour
             transform.Rotate(0, mSpeed * Time.deltaTime, 0);
         if (Input.GetKey(KeyCode.Comma))
             transform.Rotate(0, -(mSpeed * Time.deltaTime), 0);
-        if (Input.GetKey(KeyCode.Colon))
-            transform.Rotate(mSpeed * Time.deltaTime, 0, 0);
-        if (Input.GetKey(KeyCode.Period))
-            transform.Rotate(-(mSpeed * Time.deltaTime), 0, 0);
+       // if (Input.GetKey(KeyCode.Colon))
+           // transform.Rotate(mSpeed * Time.deltaTime, 0, 0);
+       // if (Input.GetKey(KeyCode.Period))
+            //transform.Rotate(-(mSpeed * Time.deltaTime), 0, 0);
     }
 }
