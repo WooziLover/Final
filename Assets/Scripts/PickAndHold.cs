@@ -4,24 +4,66 @@ using UnityEngine;
 
 public class PickAndHold : MonoBehaviour
 {
+    //public Transform player;
+    //public Transform playerCamera;
+    public float magnitude = 2.12f;
+    bool isPlayer = false;
+    bool isHeld = false;
+    bool isTouched = false;
     Rigidbody rigidBody;
-    Transform player;
-    Vector3 vector;
 
-    //You have to use the Translate Function so it goes to the camera. 
-
-     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();  
+        rigidBody.GetComponent<Rigidbody>();
+        Debug.Log("start works");
     }
-    
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            rigidBody.transform.Translate(rigidBody.position.x, rigidBody.position.y, rigidBody.position.z);
-        }   
+        float distance = Vector3.Distance(gameObject.transform.position, Camera.main.gameObject.transform.position);
+        if(distance <= magnitude)
+            isPlayer = true;
+            else{
+                isPlayer = false;
+                //only works to here!
+            }
+    }        
+       /*       if(isPlayer && Input.GetButtonDown("Use"))
+            {
+                Debug.Log("this works?");
+                rigidBody.isKinematic = true;
+            
+                
+                transform.parent = playerCamera;
+                isHeld = true;
+            }
+            if(isHeld)
+            {
+                if(isTouched)
+                {
+                    rigidBody.isKinematic = false;
+                    transform.parent = null;
+                    isHeld = false;
+                    isTouched = false;
+                }
+                if(Input.GetMouseButtonDown(0))
+                {
+                    rigidBody.isKinematic = false;
+                    transform.parent = null;
+                    isHeld = false;
+                    rigidBody.AddForce(playerCamera.forward * magnitude);
+                }
+                else
+                {
+                    if(Input.GetMouseButtonDown(1))
+                    {
+                        rigidBody.isKinematic = false;
+                        transform.parent = null;
+                        isHeld = false; 
+                    }
+                }
+            }
+        
     }
+    */
 }
