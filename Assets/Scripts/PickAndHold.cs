@@ -2,33 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*So Mr.Gustin meant that when a object hits a ball, then the ball gets destroyed and added to an inventory at the
+ * bottom of the screen
+ */
+
 public class PickAndHold : MonoBehaviour
-{
-   /*  Rigidbody rigidBody;
-    float distance = 2.12f;
-     void onTriggerEnter(Collider mCollider){
-       if(mCollider.gameObject.tag == "Sphere")
-       {
-           Debug.Log("works?");
-       } 
-    }
-    //public Transform player;
-    //public Transform playerCamera;
-   
+{ 
 
-    void Start()
+    void OnCollisionEnter(Collision collision)
     {
-        rigidBody.GetComponent<Rigidbody>();
-        Debug.Log("start works");
+        if(collision.gameObject.name == "Sphere 1")
+            Destroy(collision.gameObject); 
     }
-
-     void Update()
-    {
-        Vector3 mVector = Vector3.Distance(gameObject.transform.position, Camera.main.gameObject.transform.position);
-        if(Input.GetMouseButtonDown(0)){
-            gameObject.AddForce(distance.forward * magnitude);
-        }
-    }
-*/
 
 }
