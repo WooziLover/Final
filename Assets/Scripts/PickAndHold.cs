@@ -8,11 +8,10 @@ using UnityEngine;
 
 public class PickAndHold : MonoBehaviour
 {
-    
-
     public void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Sphere 1")
+        if (col.gameObject.name == "Sphere 1" || col.gameObject.name == "Sphere 1(Clone)")
+          //  || col.gameObject.name == "Cube" || col.gameObject.name == "Cube(Clone)"
         {
             InventoryScore.numberOfObjects += 1;
             Destroy(col.gameObject);
