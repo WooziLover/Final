@@ -10,11 +10,13 @@ public class PickAndHold : MonoBehaviour
 {
     
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision col)
     {
-        if (collision.gameObject.name == "Sphere 1")
-            Destroy(collision.gameObject);
-            KeepScore.inventoryScore += 1;
+        if (col.gameObject.name == "Sphere 1")
+        {
+            InventoryScore.numberOfObjects += 1;
+            Destroy(col.gameObject);
+        }
     }
 
 }

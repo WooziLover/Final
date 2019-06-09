@@ -14,6 +14,7 @@ public class SpawnAndLaunch : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         pick();
+        //here to access the method in ChooseRandomFruit class
     }
 
     void Update()
