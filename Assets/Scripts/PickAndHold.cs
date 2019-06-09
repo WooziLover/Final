@@ -7,12 +7,14 @@ using UnityEngine;
  */
 
 public class PickAndHold : MonoBehaviour
-{ 
+{
+    
 
-    void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Sphere 1")
-            Destroy(collision.gameObject); 
+        if (collision.gameObject.name == "Sphere 1")
+            Destroy(collision.gameObject);
+            KeepScore.inventoryScore += 1;
     }
 
 }
