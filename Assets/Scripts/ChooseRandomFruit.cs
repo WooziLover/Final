@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChooseRandomFruit : MonoBehaviour
 {
+    //Is no class using this?
 
     GameObject[] itemChoices;
     Rigidbody rigidBody;
@@ -18,7 +19,7 @@ public class ChooseRandomFruit : MonoBehaviour
 
     void pick()
     {
-        int randomIndex = Random.Range(0, itemChoices.Length + 1);
-        GameObject spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
+        int randomIndex = Random.Range(0, itemChoices.Length);
+        GameObject spawn = Instantiate(itemChoices[2], transform.position, Quaternion.identity);
     }         
 }

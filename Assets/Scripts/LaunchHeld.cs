@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class LaunchHeld : MonoBehaviour
 {
-    void getInput()
-    {
+    public int inventoryCount;
+    public float magnitude = 2.12f;
+    Rigidbody rigidBody;
+    public int userDist;
+    int count = 0;
+    public GameObject[] collectedObjects;
 
-    }
-    //GameObject[] inventory = new GameObject[3];
-    // Start is called before the first frame update
-   /* void Start()
+    void Start()
     {
-        for(int i = 0; i < inventory.Length; i++)
-        {
-
-        }
+        rigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }*/
+        inventoryCount = InventoryScore.numberOfObjects;
+        userDist = GameController.userDistance;
+        collectedObjects = new GameObject[inventoryCount];
+
+        if (Input.GetKey(KeyCode.T))
+        {
+            if (count < inventoryCount)
+            {
+                GameObject spawn = Instantiate(collectedObjects[count], transform.position, Quaternion.identity);
+                rigidBody.AddForce(new Vector3(userDist, 8, 5) * magnitude);
+                count++;
+            }
+        }
+       
+    }
+
+  
+
 }

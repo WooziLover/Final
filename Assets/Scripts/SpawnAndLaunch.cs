@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnAndLaunch : MonoBehaviour
 {
     public GameObject[] itemChoices;
-    int direction = 4;
     public float magnitude = 2.12f;
     Rigidbody rigidBody;
 
@@ -23,7 +22,7 @@ public class SpawnAndLaunch : MonoBehaviour
     }
     void pick()
     {
-        int randomIndex = Random.Range(0, itemChoices.Length - 1);
+        int randomIndex = Random.Range(0, itemChoices.Length);
        GameObject spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
     }
   

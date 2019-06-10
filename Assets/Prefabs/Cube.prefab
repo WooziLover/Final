@@ -137,6 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72660b2624508847ade8777a194b9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryCount: 0
+  magnitude: 2.12
+  userDist: 0
+  collectedObjects: []
 --- !u!65 &4122566910056184585
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -15,6 +15,16 @@ public class InventoryScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(numberOfObjects > 1)
         inventory.text = numberOfObjects + " " + "Spheres";
+        else
+        {
+            inventory.text = numberOfObjects + " " + "Sphere";
+        }
+
+        if (Input.GetKey(KeyCode.T))
+        {
+            numberOfObjects--;
+        }
     }
 }
