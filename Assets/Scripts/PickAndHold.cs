@@ -13,7 +13,9 @@ public class PickAndHold : MonoBehaviour
         if (col.gameObject.name == "Sphere 1" || col.gameObject.name == "Sphere 1(Clone)")
           //  || col.gameObject.name == "Cube" || col.gameObject.name == "Cube(Clone)"
         {
-            InventoryScore.numberOfObjects += 1;
+            
+            GetComponent<LaunchHeld>().numberHeldRightNow++;
+            //InventoryScore.numberOfObjects += 1;
             Destroy(col.gameObject);
         }
     }

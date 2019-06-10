@@ -166,10 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72660b2624508847ade8777a194b9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryCount: 0
   magnitude: 2.12
   userDist: 0
-  collectedObjects: []
+  numberHeldRightNow: 0
+  spherePrefab: {fileID: 5275082992463033682, guid: c464930c79434da4a95f91d05b02f15b,
+    type: 3}
 --- !u!114 &5190266215496516305
 MonoBehaviour:
   m_ObjectHideFlags: 0
