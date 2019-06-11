@@ -15,12 +15,15 @@ public class LaunchHeld : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    void Update(){
+    void Update()
+    {
         inventoryCount = InventoryScore.numberOfObjects;
-        if(Input.GetKey(KeyCode.T)){
-            if(count < inventoryCount){
+        if (Input.GetKey(KeyCode.T))
+        {
+            if (count < inventoryCount)
+            {
                 transform.parent = null;
-                GameObject spawn = Instantiate(spherePrefab, transform.position +transform.right, Quaternion.identity);
+                GameObject spawn = Instantiate(spherePrefab, transform.position + transform.right + transform.right, Quaternion.identity);
                 Launch();
             }
         }
@@ -28,7 +31,7 @@ public class LaunchHeld : MonoBehaviour
 
     void Launch()
     {
-         rigidBody.AddForce(new Vector3(200, 8, 8) * magnitude);
+        rigidBody.AddForce(new Vector3(200, 8, 8) * magnitude);
     }
 
     /*public float magnitude = 2.12f;

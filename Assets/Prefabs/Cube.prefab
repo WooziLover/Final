@@ -139,10 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryCount: 0
   magnitude: 2.12
-  userDist: 0
   spherePrefab: {fileID: 3195832839156391049, guid: c464930c79434da4a95f91d05b02f15b,
     type: 3}
-  objectList: []
 --- !u!65 &4122566910056184585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -184,6 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc09efe029764852925cbbf469a4739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 3195832839156391049, guid: c464930c79434da4a95f91d05b02f15b,
+    type: 3}
 --- !u!114 &8780343159047791841
 MonoBehaviour:
   m_ObjectHideFlags: 0

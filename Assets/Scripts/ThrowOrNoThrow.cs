@@ -14,7 +14,7 @@ public class ThrowOrNoThrow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if(InventoryScore.numberOfObjects == 0)
             mText.text = "There's nothing to throw!";
         else

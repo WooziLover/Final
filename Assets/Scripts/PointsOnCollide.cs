@@ -14,12 +14,11 @@ public class PointsOnCollide : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "TheWall"){
-            /* x = transform.position.x.ToString();
-            y = transform.position.y.ToString();
-            z = transform.position.z.ToString();  */ 
-            Debug.Log("(" + transform.position.x + "," + transform.position.y + "," + transform.position.z + ")");
-
-            // + transform.position.y.ToString() + transform.position.z.ToString());
+            string x = transform.position.x.ToString();
+            string y = transform.position.y.ToString();
+            string z = transform.position.z.ToString();
+            mText.text = x + y + z;
+            //Debug.Log("(" + transform.position.x + "," + transform.position.y + "," + transform.position.z + ")");
         }
     }
 }

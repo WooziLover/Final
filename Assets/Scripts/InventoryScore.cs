@@ -21,7 +21,9 @@ public class InventoryScore : MonoBehaviour
         {
             inventory.text = numberOfObjects + " " + "Sphere";
         }
-
+         
+        if(numberOfObjects < 0)
+            inventory.text = "0" + " " + "Sphere";
         if (Input.GetKey(KeyCode.T))
         {
             numberOfObjects--;
