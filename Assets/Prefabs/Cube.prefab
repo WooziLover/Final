@@ -140,7 +140,9 @@ MonoBehaviour:
   inventoryCount: 0
   magnitude: 2.12
   userDist: 0
-  collectedObjects: []
+  spherePrefab: {fileID: 3195832839156391049, guid: c464930c79434da4a95f91d05b02f15b,
+    type: 3}
+  objectList: []
 --- !u!65 &4122566910056184585
 BoxCollider:
   m_ObjectHideFlags: 0

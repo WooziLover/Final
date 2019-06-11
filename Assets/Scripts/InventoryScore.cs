@@ -4,16 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventoryScore : MonoBehaviour
 {
-    public static InventoryScore singleton;
-
     public static int numberOfObjects = 0;
-    public Text inventory;
+    Text inventory;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        singleton = this;
-    }
-
     void Start()
     {
         inventory = GetComponent<Text>();  
@@ -22,8 +15,7 @@ public class InventoryScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (numberOfObjects > 1)
+        if(numberOfObjects > 1)
         inventory.text = numberOfObjects + " " + "Spheres";
         else
         {
@@ -33,8 +25,6 @@ public class InventoryScore : MonoBehaviour
         if (Input.GetKey(KeyCode.T))
         {
             numberOfObjects--;
-        }*/
-
-
+        }
     }
 }

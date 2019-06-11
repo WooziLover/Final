@@ -4,42 +4,29 @@ using UnityEngine;
 
 public class LaunchHeld : MonoBehaviour
 {
-    /*
     public int inventoryCount;
     public float magnitude = 2.12f;
     Rigidbody rigidBody;
-    public int userDist;
     int count = 0;
-    public GameObject[] collectedObjects;
-
-    public List<GameObject> objectList = new List<GameObject>();
+    public GameObject spherePrefab;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        collectedObjects = new GameObject[inventoryCount];
     }
 
-    void Update()
-    {
+    void Update(){
         inventoryCount = InventoryScore.numberOfObjects;
-
-        userDist = GameController.userDistance;
-
-        if (Input.GetKeyUp(KeyCode.T))
-        {
-            if (count < inventoryCount)
-            {
-                GameObject spawn = Instantiate(collectedObjects[count], transform.position, Quaternion.identity);
-                rigidBody.AddForce(new Vector3(userDist, 8, 5) * magnitude);
-                count++;
+        if(Input.GetKey(KeyCode.T)){
+            if(count < inventoryCount){
+                transform.parent = null;
+                GameObject spawn = Instantiate(spherePrefab, transform.position +transform.right, Quaternion.identity);
+                rigidBody.AddForce(new Vector3(100, 5, 1) * magnitude);
             }
         }
-       
     }
-    */
 
-    public float magnitude = 2.12f;//2.12
+    /*public float magnitude = 2.12f;
     public float userDist;
 
     public int numberHeldRightNow = 0;
@@ -52,20 +39,18 @@ public class LaunchHeld : MonoBehaviour
 
     private void Update()
     {
-        InventoryScore.singleton.inventory.text = numberHeldRightNow.ToString() + " Spheres";
+       // InventoryScore.singleton.inventory.text = numberHeldRightNow.ToString() + " Spheres";
 
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (numberHeldRightNow > 0)
             {
-                userDist = GameController.userDistance;
-            
-                GameObject spawn = Instantiate(spherePrefab, transform.position + transform.forward, Quaternion.identity);
+                GameObject spawn = Instantiate(spherePrefab, transform.position + transform.forward + transform.forward, Quaternion.identity);
                 Rigidbody spawnedSphereRigidbody = spawn.GetComponent<Rigidbody>();
                 spawnedSphereRigidbody.AddForce(new Vector3(userDist, 8, 5) * magnitude);
             }
         }
-    }
+}*/
 
 
 }

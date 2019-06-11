@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿    
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class ChooseRandomFruit : MonoBehaviour
         
     }
 
-    public void pick()
+    void pick()
     {
         int randomIndex = Random.Range(0, itemChoices.Length);
         GameObject spawn = Instantiate(itemChoices[2], transform.position, Quaternion.identity);

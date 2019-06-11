@@ -8,14 +8,16 @@ using UnityEngine;
 
 public class PickAndHold : MonoBehaviour
 {
+    public static List<GameObject> objectList = new List<GameObject>();
+    public GameObject spherePrefab;
+
     public void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "Sphere 1" || col.gameObject.name == "Sphere 1(Clone)")
-          //  || col.gameObject.name == "Cube" || col.gameObject.name == "Cube(Clone)"
         {
-            
-            GetComponent<LaunchHeld>().numberHeldRightNow++;
-            //InventoryScore.numberOfObjects += 1;
+            objectList.Add(spherePrefab);
+         //   GetComponent<LaunchHeld>().++;
+            InventoryScore.numberOfObjects += 1;
             Destroy(col.gameObject);
         }
     }

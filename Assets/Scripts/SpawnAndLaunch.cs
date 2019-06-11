@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,15 +14,16 @@ public class SpawnAndLaunch : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         pick();
+        //here to access the method in ChooseRandomFruit class
     }
 
     void Update()
     {
         launch();    
     }
-     public void pick()
+    void pick()
     {
-       int randomIndex = Random.Range(0, itemChoices.Length);
+        int randomIndex = Random.Range(0, itemChoices.Length);
        GameObject spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
     }
   
