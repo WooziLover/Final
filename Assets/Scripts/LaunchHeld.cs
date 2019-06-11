@@ -25,13 +25,14 @@ public class LaunchHeld : MonoBehaviour
                 transform.parent = null;
                 GameObject spawn = Instantiate(spherePrefab, transform.position + transform.right + transform.right, Quaternion.identity);
                 Launch();
+
             }
         }
     }
 
     void Launch()
     {
-        rigidBody.AddForce(new Vector3(200, 8, 8) * magnitude);
+        rigidBody.AddForce(new Vector3(200, 100, 8) * magnitude);
     }
 
     /*public float magnitude = 2.12f;
