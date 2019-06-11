@@ -17,7 +17,7 @@ public class ChooseRandomFruit : MonoBehaviour
         
     }
 
-    void pick()
+    public void pick()
     {
         int randomIndex = Random.Range(0, itemChoices.Length);
         GameObject spawn = Instantiate(itemChoices[2], transform.position, Quaternion.identity);

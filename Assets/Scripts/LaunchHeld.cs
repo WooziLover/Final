@@ -39,7 +39,7 @@ public class LaunchHeld : MonoBehaviour
     }
     */
 
-    public float magnitude = 2.12f;
+    public float magnitude = 2.12f;//2.12
     public float userDist;
 
     public int numberHeldRightNow = 0;
@@ -58,6 +58,8 @@ public class LaunchHeld : MonoBehaviour
         {
             if (numberHeldRightNow > 0)
             {
+                userDist = GameController.userDistance;
+            
                 GameObject spawn = Instantiate(spherePrefab, transform.position + transform.forward, Quaternion.identity);
                 Rigidbody spawnedSphereRigidbody = spawn.GetComponent<Rigidbody>();
                 spawnedSphereRigidbody.AddForce(new Vector3(userDist, 8, 5) * magnitude);

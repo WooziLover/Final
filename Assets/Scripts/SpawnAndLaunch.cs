@@ -13,16 +13,15 @@ public class SpawnAndLaunch : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         pick();
-        //here to access the method in ChooseRandomFruit class
     }
 
     void Update()
     {
         launch();    
     }
-    void pick()
+     public void pick()
     {
-        int randomIndex = Random.Range(0, itemChoices.Length);
+       int randomIndex = Random.Range(0, itemChoices.Length);
        GameObject spawn = Instantiate(itemChoices[randomIndex], transform.position, Quaternion.identity);
     }
   
