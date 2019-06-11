@@ -6,11 +6,20 @@ using UnityEngine.UI;
 public class PointsOnCollide : MonoBehaviour
 {
     Text mText;
-    private void OnCollisionEnter(Collision col)
+
+    void Start()
     {
-        if (col.gameObject.name == "Sphere 1" || col.gameObject.name == "Sphere 1(Clone)")
-        {
-            //mText.text = "(" + 
+        mText = GetComponent<Text>();
+    } 
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "TheWall"){
+            /* x = transform.position.x.ToString();
+            y = transform.position.y.ToString();
+            z = transform.position.z.ToString();  */ 
+            Debug.Log("(" + transform.position.x + "," + transform.position.y + "," + transform.position.z + ")");
+
+            // + transform.position.y.ToString() + transform.position.z.ToString());
         }
     }
 }

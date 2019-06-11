@@ -21,9 +21,14 @@ public class LaunchHeld : MonoBehaviour
             if(count < inventoryCount){
                 transform.parent = null;
                 GameObject spawn = Instantiate(spherePrefab, transform.position +transform.right, Quaternion.identity);
-                rigidBody.AddForce(new Vector3(100, 5, 1) * magnitude);
+                Launch();
             }
         }
+    }
+
+    void Launch()
+    {
+         rigidBody.AddForce(new Vector3(200, 8, 8) * magnitude);
     }
 
     /*public float magnitude = 2.12f;

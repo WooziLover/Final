@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7113248687199955296}
   - component: {fileID: 5518871943606589203}
   - component: {fileID: 9023929449195650874}
+  - component: {fileID: 9007513783105685649}
   - component: {fileID: 7113248687199955300}
   m_Layer: 0
   m_Name: Cylinder
@@ -150,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc09efe029764852925cbbf469a4739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spherePrefab: {fileID: 0}
 --- !u!114 &9023929449195650874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +166,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemChoices: []
   magnitude: 100
+--- !u!114 &9007513783105685649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113248687199955297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72660b2624508847ade8777a194b9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryCount: 0
+  magnitude: 2.12
+  spherePrefab: {fileID: 3195832839156391049, guid: c464930c79434da4a95f91d05b02f15b,
+    type: 3}
 --- !u!54 &7113248687199955300
 Rigidbody:
   m_ObjectHideFlags: 0
