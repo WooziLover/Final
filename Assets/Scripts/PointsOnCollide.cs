@@ -10,15 +10,20 @@ public class PointsOnCollide : MonoBehaviour
     void Start()
     {
         mText = GetComponent<Text>();
-    } 
-    void OnCollisionEnter(Collision col)
+    }
+
+    void Update()
     {
-        if (col.gameObject.name == "TheWall"){
-            string x = transform.position.x.ToString();
-            string y = transform.position.y.ToString();
-            string z = transform.position.z.ToString();
-            mText.text = x + y + z;
-            //Debug.Log("(" + transform.position.x + "," + transform.position.y + "," + transform.position.z + ")");
-        }
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "TheWall" || collision.gameObject.name == "Sphere 1" || collision.gameObject.name == "Sphere 1(Clone)");
+        {
+            string xCoord = transform.position.ToString();
+            mText = GameObject.Find("Coordinates").GetComponent<Text>();
+            mText.text = xCoord;
+        }    
     }
 }
