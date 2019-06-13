@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnAndLaunch : MonoBehaviour
 {
     public GameObject[] itemChoices;
-    public float magnitude = 2.12f;
+    public float magnitude = 1.12f;
     Rigidbody rigidBody;
 
     // Start is called before the first frame update
